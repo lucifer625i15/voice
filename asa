@@ -1,0 +1,13 @@
+ else if(transcript !== "open" || "hi")
+    {
+        recognition.stop();
+           fetch(`https://api.affiliateplus.xyz/api/chatbot?message=${encodeURIComponent(transcript)}&botname=nelexa&ownername=Diwas Atreya`, {
+        
+    })
+        .then(res => res.json())
+        .then(data => {
+              
+        utter.text = data.message;
+        synth.speak(utter);
+        })
+    }
